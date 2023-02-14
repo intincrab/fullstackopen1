@@ -1,5 +1,8 @@
+const { request, response } = require('express')
 const express = require('express')
 const app = express()
+app.use(express.json())
+
 
 let notes = [
   {
@@ -43,4 +46,10 @@ app.delete('/api/notes/:id', (request, response) => {
 const PORT = 3001
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
+})
+
+app.post('/api/notes',(request,response) => {
+  const note = request.body
+  console.log(note);
+  response.json(note)
 })
