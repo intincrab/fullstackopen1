@@ -3,7 +3,6 @@ import Note from './components/Note'
 import Notification from './components/Notification'
 import Footer from './components/Footer'
 import noteService from './services/notes'
-import './index.css'
 
 const App = () => {
   const [notes, setNotes] = useState([])
